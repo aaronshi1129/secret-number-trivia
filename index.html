@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Secret Number</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ultimate Secret Number</h1>
+        <div id="game-setup" class="section">
+            <h2>Game Setup</h2>
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <p>Ultimate Secret Number is a group game for 2-10 players.</p>
+                <ol>
+                    <li>A secret number between 1 and 99 is chosen.</li>
+                    <li>Players take turns trying to guess the number.</li>
+                    <li>To make a guess, you must first correctly answer a trivia question.</li>
+                    <li>If you answer incorrectly, your turn is skipped in the current round.</li>
+                    <li>When guessing, the range narrows based on your guess.</li>
+                    <li>If you guess too high, that becomes the new upper bound.</li>
+                    <li>If you guess too low, that becomes the new lower bound.</li>
+                    <li>The player who is forced to guess the secret number loses!</li>
+                </ol>
+            </div>
+            <div class="setup-controls">
+                <div class="setup-item">
+                    <label for="num-players">Number of Players:</label>
+                    <select id="num-players">
+                        <option value="2">2 Players</option>
+                        <option value="3">3 Players</option>
+                        <option value="4">4 Players</option>
+                        <option value="5">5 Players</option>
+                        <option value="6">6 Players</option>
+                        <option value="7">7 Players</option>
+                        <option value="8">8 Players</option>
+                        <option value="9">9 Players</option>
+                        <option value="10">10 Players</option>
+                    </select>
+                </div>
+                
+                <div class="setup-item">
+                    <label for="question-bank-select">Question Bank:</label>
+                    <select id="question-bank-select">
+                        <option value="built-in">Trivia Questions</option>
+                        <option value="custom">Custom Questions</option>
+                    </select>
+                </div>
+                
+                <div id="custom-bank-container" class="question-bank-controls hidden">
+                    <h3>Custom Question Bank</h3>
+                    <p>Enter your questions in JSON format. Each question needs a question text, options array, and a correctAnswer that matches one of the options. Example format:[{ "question": "What is 2+2?", "options": ["3", "4", "5", "6"], "correctAnswer": "4"}]
+                    </p>
+                    <div class="custom-bank-input">
+                        <textarea id="custom-bank-textarea" class="bank-textarea" placeholder='[
+  {
+    "question": "What is 2+2?",
+    "options": ["3", "4", "5", "6"],
+    "correctAnswer": "4"
+  }
+]'></textarea>
+                        <button id="save-custom-bank">Save Question Bank</button>
+                    </div>
+                    <div id="setup-message-area"></div>
+                </div>
+                
+                <button id="start-game">Start Game</button>
+            </div>
+        </div>
+
+        <div id="game-area" class="section hidden">
+            <div id="game-info">
+                <div class="info-box">
+                    <h3>Current Range</h3>
+                    <div id="range-display">1 - 99</div>
+                </div>
+                <div class="info-box">
+                    <h3>Current Player</h3>
+                    <div id="current-player">Player 1</div>
+                </div>
+                <div class="info-box">
+                    <h3>Round</h3>
+                    <div id="round-number">1</div>
+                </div>
+            </div>
+
+            <div id="question-section">
+                <h3>Answer the question to make a guess:</h3>
+                <div id="question-text"></div>
+                <div id="answer-options"></div>
+            </div>
+
+            <div id="guess-section" class="hidden">
+                <h3>Make your guess:</h3>
+                <input type="number" id="guess-input" min="1" max="99">
+                <button id="submit-guess">Submit Guess</button>
+            </div>
+
+            <div id="message-area"></div>
+
+            <div id="player-status">
+                <h3>Players</h3>
+                <div id="player-list"></div>
+            </div>
+        </div>
+
+        <div id="game-over" class="section hidden">
+            <h2>Game Over!</h2>
+            <div id="result-message"></div>
+            <button id="play-again">Play Again</button>
+        </div>
+        
+        <div class="footer">
+            Released in March 2025.
+<a href="https://sites.google.com/view/aaronshi/games-activities/catalog" target="_blank">
+    <img src="https://alittlemoreenglish.weebly.com/uploads/2/6/6/3/26638990/favicon-32x32_orig.png" alt="Logo" class="footer-logo">
+</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
