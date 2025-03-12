@@ -11,6 +11,7 @@ let currentCorrectAnswer = null;
 let loserFound = false;
 let activeQuestionBank = 'built-in';
 let customQuestionBank = [];
+let canGuess = false; // New flag to track if guessing is allowed
 
 // Collection of trivia questions
 const builtInQuestions = [
@@ -191,7 +192,15 @@ const playAgainBtn = document.getElementById('play-again');
 
 // Event listeners
 startGameBtn.addEventListener('click', startGame);
-submitGuessBtn.addEventListener('click', handleGuess);
+submitGuessBtn.addEventListener('click', function(e) {
+    // Only process the guess if the player is allowed to guess
+    if (canGuess) {
+        handleGuess();
+    } else {
+        e.preventDefault();
+        displayMessage('Please answer the question correctly first', 'error');
+    }
+});
 playAgainBtn.addEventListener('click', resetGame);
 questionBankSelect.addEventListener('change', handleQuestionBankChange);
 saveCustomBankBtn.addEventListener('click', saveCustomQuestionBank);
@@ -298,6 +307,7 @@ function startGame() {
     currentPlayerIndex = 0;
     round = 1;
     loserFound = false;
+    canGuess = false; // Reset the flag at the start of the game
     
     // Generate secret number (1-99, excluding bounds)
     secretNumber = Math.floor(Math.random() * 99) + 1;
@@ -323,6 +333,9 @@ function startGame() {
 }
 
 function startPlayerTurn() {
+    // Reset guess permission at the start of each turn
+    canGuess = false;
+    
     // Check if current player is skipped
     if (players[currentPlayerIndex].isSkipped) {
         displayMessage(`${players[currentPlayerIndex].name}'s turn is skipped this round.`, 'info');
@@ -389,6 +402,9 @@ function handleAnswerSelection(selectedAnswer) {
         if (selectedAnswer === currentCorrectAnswer) {
             displayMessage('Correct! You can now make a guess.', 'success');
             
+            // Allow guessing since the answer was correct
+            canGuess = true;
+            
             // Wait a moment to show the success message, then show the guess section
             setTimeout(() => {
                 // Show the guess section
@@ -404,6 +420,9 @@ function handleAnswerSelection(selectedAnswer) {
         } else {
             displayMessage('Incorrect! Your turn is skipped.', 'error');
             
+            // Ensure guessing is not allowed
+            canGuess = false;
+            
             // Move to next player after showing the error message
             setTimeout(() => {
                 nextPlayer();
@@ -414,6 +433,12 @@ function handleAnswerSelection(selectedAnswer) {
 }
 
 function handleGuess() {
+    // Double-check the canGuess flag (extra validation)
+    if (!canGuess) {
+        displayMessage('Please answer the question correctly first', 'error');
+        return;
+    }
+    
     const guess = parseInt(guessInputEl.value);
     
     // Validate guess
@@ -551,6 +576,7 @@ function resetGame() {
     gameActive = false;
     currentQuestion = null;
     loserFound = false;
+    canGuess = false; // Reset the guess permission flag
     
     // Clear messages
     messageAreaEl.textContent = '';
