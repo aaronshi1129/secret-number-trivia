@@ -456,7 +456,7 @@ function handleGuess() {
     
     // Process the guess
     if (guess === secretNumber) {
-        // Game over - current player loses
+        // Game over - current player wins
         displayMessage(`${players[currentPlayerIndex].name} guessed the secret number ${secretNumber}!`, 'info');
         endGame(currentPlayerIndex);
     } else if (guess < secretNumber) {
@@ -468,7 +468,7 @@ function handleGuess() {
         if (lowerBound + 1 >= upperBound - 1) {
             // Next player will lose
             const nextPlayerIndex = (currentPlayerIndex + 1) % players.length;
-            displayMessage(`${players[nextPlayerIndex].name} has no valid moves and loses!`, 'info');
+            displayMessage(`${players[nextPlayerIndex].name} wins!`, 'info');
             endGame(nextPlayerIndex);
             return;
         }
@@ -485,7 +485,7 @@ function handleGuess() {
         if (lowerBound + 1 >= upperBound - 1) {
             // Next player will lose
             const nextPlayerIndex = (currentPlayerIndex + 1) % players.length;
-            displayMessage(`${players[nextPlayerIndex].name} has no valid moves and loses!`, 'info');
+            displayMessage(`${players[nextPlayerIndex].name} wins!`, 'info');
             endGame(nextPlayerIndex);
             return;
         }
@@ -558,7 +558,7 @@ function endGame(loserIndex) {
         
         resultMessageEl.innerHTML = `
             <p>Game Over! The secret number was <span class="highlight">${secretNumber}</span>.</p>
-            <p>${players[loserIndex].name} loses!</p>
+            <p>${players[loserIndex].name} wins!</p>
         `;
     }, 3000);
 }
