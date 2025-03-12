@@ -63,6 +63,106 @@ const builtInQuestions = [
         question: "Which country is known as the Land of the Rising Sun?",
         options: ["China", "Thailand", "Japan", "South Korea"],
         correctAnswer: "Japan"
+    },
+    {
+        question: "What is the chemical symbol for water?",
+        options: ["O2", "H2O", "CO2", "HO"],
+        correctAnswer: "H2O"
+    },
+    {
+        question: "Which continent is known as the 'Frozen Continent'?",
+        options: ["Antarctica", "Europe", "North America", "Asia"],
+        correctAnswer: "Antarctica"
+    },
+    {
+        question: "Who wrote the play 'Romeo and Juliet'?",
+        options: ["William Shakespeare", "Mark Twain", "Jane Austen", "Charles Dickens"],
+        correctAnswer: "William Shakespeare"
+    },
+    {
+        question: "What is the smallest planet in our solar system?",
+        options: ["Mercury", "Mars", "Pluto", "Venus"],
+        correctAnswer: "Mercury"
+    },
+    {
+        question: "Which ocean is the largest in the world?",
+        options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+        correctAnswer: "Pacific Ocean"
+    },
+    {
+        question: "In which year did the Titanic sink?",
+        options: ["1910", "1912", "1915", "1920"],
+        correctAnswer: "1912"
+    },
+    {
+        question: "What is the primary ingredient in guacamole?",
+        options: ["Tomato", "Cucumber", "Avocado", "Lettuce"],
+        correctAnswer: "Avocado"
+    },
+    {
+        question: "How many continents are there on Earth?",
+        options: ["5", "6", "7", "8"],
+        correctAnswer: "7"
+    },
+    {
+        question: "What is the name of the longest river in the world?",
+        options: ["Amazon", "Nile", "Yangtze", "Mississippi"],
+        correctAnswer: "Nile"
+    },
+    {
+        question: "Which scientist developed the theory of relativity?",
+        options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Marie Curie"],
+        correctAnswer: "Albert Einstein"
+    },
+    {
+        question: "Which city is known as the Big Apple?",
+        options: ["Los Angeles", "Chicago", "New York City", "San Francisco"],
+        correctAnswer: "New York City"
+    },
+    {
+        question: "Which language is the most spoken worldwide?",
+        options: ["Spanish", "English", "Chinese", "Hindi"],
+        correctAnswer: "Chinese"
+    },
+    {
+        question: "What is the square root of 144?",
+        options: ["10", "12", "14", "16"],
+        correctAnswer: "12"
+    },
+    {
+        question: "Who was the first President of the United States?",
+        options: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"],
+        correctAnswer: "George Washington"
+    },
+    {
+        question: "What is the process by which plants make their food?",
+        options: ["Photosynthesis", "Respiration", "Digestion", "Fermentation"],
+        correctAnswer: "Photosynthesis"
+    },
+    {
+        question: "Which is the tallest mountain in the world?",
+        options: ["K2", "Mount Everest", "Kangchenjunga", "Lhotse"],
+        correctAnswer: "Mount Everest"
+    },
+    {
+        question: "Which color is formed by mixing red and yellow?",
+        options: ["Purple", "Orange", "Green", "Brown"],
+        correctAnswer: "Orange"
+    },
+    {
+        question: "Which ancient civilization built the pyramids?",
+        options: ["Roman", "Egyptian", "Greek", "Mayan"],
+        correctAnswer: "Egyptian"
+    },
+    {
+        question: "What is the freezing point of water in Celsius?",
+        options: ["0", "32", "-10", "100"],
+        correctAnswer: "0"
+    },
+    {
+        question: "Which sport is known as 'the beautiful game'?",
+        options: ["Basketball", "Cricket", "Soccer", "Tennis"],
+        correctAnswer: "Soccer"
     }
 ];
 
