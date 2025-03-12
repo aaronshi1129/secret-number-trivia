@@ -9,12 +9,11 @@
     <div class="container">
         <h1>Ultimate Secret Number</h1>
         <div id="game-setup" class="section">
-            <h2>Welcome!</h2>
+            <h2>Welcome to the Ultimate Secret Number game!</h2>
             <div class="instructions">
                 <h3>How to Play</h3>
-                <p>Ultimate Secret Number is a group game for 2 to 10 players.</p>
                 <ol>
-                    <li>A secret number between 1 and 99 is chosen.</li>
+                    <li>A secret number between 1 and the selected maximum range is chosen.</li>
                     <li>Players take turns trying to guess the number.</li>
                     <li>To make a guess, you must first correctly answer a trivia question.</li>
                     <li>If you answer incorrectly, your turn is skipped in the current round.</li>
@@ -37,6 +36,16 @@
                         <option value="8">8 Players</option>
                         <option value="9">9 Players</option>
                         <option value="10">10 Players</option>
+                    </select>
+                </div>
+                
+                <div class="setup-item">
+                    <label for="number-range">Number Range:</label>
+                    <select id="number-range">
+                        <option value="100">0-100</option>
+                        <option value="250">0-250</option>
+                        <option value="500">0-500</option>
+                        <option value="1000">0-1000</option>
                     </select>
                 </div>
                 
@@ -73,7 +82,7 @@
             <div id="game-info">
                 <div class="info-box">
                     <h3>Current Range</h3>
-                    <div id="range-display">1 - 99</div>
+                    <div id="range-display">0 - 100</div>
                 </div>
                 <div class="info-box">
                     <h3>Current Player</h3>
