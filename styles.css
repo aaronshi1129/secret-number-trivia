@@ -6,8 +6,11 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f8f0e3, #e3f8f8, #f8e3f8);
-    color: #333;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
     line-height: 1.6;
 }
 
